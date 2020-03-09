@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "cw2": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\Mati\\Desktop\\dane.csv C:\\Users\\Mati\\Desktop\\wynik.xml xml "
+    }
+  }
+}
