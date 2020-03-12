@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace cw2
 {
@@ -14,11 +13,10 @@ namespace cw2
         {
             try
             {
-                var path = @"C:\Users\Mati\Desktop\cw2\dane.csv";
                 var lines = File.ReadLines(args[0]);
                 var today = DateTime.Now;
                 HashSet<student> students = new HashSet<student>(new OwnComparator());
-                StreamWriter writer = new StreamWriter(@"C:\Users\Mati\Desktop\log.txt");
+                StreamWriter writer = new StreamWriter(@"log.txt");
 
                 //cz.1 tworzenie HashSet i uzupelnianie nim danymi z pliku
                 foreach (var line in lines)
@@ -84,7 +82,7 @@ namespace cw2
                         )));
                     doc.Save(args[1]);
                 }
-                else if (args[2].Equals("json")) Console.WriteLine("Jeszcze nie zaimplementowany JSON");
+                else if (args[2].Equals("json")) Console.WriteLine("Jeszcze nie zaimplementowany JSON"); // TODO konwersja na json
                 else Console.WriteLine("Wpisany zostal zly typ");
             }
             catch (ArgumentException)
